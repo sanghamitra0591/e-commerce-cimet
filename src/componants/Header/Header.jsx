@@ -43,11 +43,6 @@ const Header = () => {
           </div>
         </Link>
         <div className="link">
-          <Link to={"/blog"}>
-            <div className="blog-link">
-              <p>Blogs</p>
-            </div>
-          </Link>
 
           <Link to={"/blog"}>
             <div className="blog-link">

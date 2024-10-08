@@ -1,4 +1,3 @@
-import Blog from "./componants/Blog"
 import Footer from "./componants/Footer/Footer"
 import Header from "./componants/Header/Header"
 import Contact from "./pages/Contact/Contact"
@@ -14,14 +13,13 @@ function App() {
           <Header />
           <Routes>
             <Route path="/Home" element={<Home />} />
-            <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/*" element="Error" />
           </Routes>
           <Footer/>
         </Router>
       </div>
-  )
+)
 }
 
 export default App

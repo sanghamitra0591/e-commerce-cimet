@@ -1,12 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
-import Home from "../pages/Home/Home";
-import Cart from "../componants/Cart/Cart";
-import ProductsWrapper from "../pages/Products/ProductsWrapper";
-import Products from "../pages/Products/Products";
-import SingleProduct from "../pages/Products/SingleProduct";
+import Home from "../pages/home/Home";
+import Cart from "../components/Cart/Cart";
 import Contact from "../pages/Contact/Contact";
-import Login from "../pages/Login/Login";
+import Login from "../pages/login/Login";
+import Blogs from "../pages/blogs/Blogs"
+import Products from "../pages/products/Products";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +18,6 @@ const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <ProductsWrapper />,
         children: [
           {
             index: true,
@@ -27,26 +25,23 @@ const router = createBrowserRouter([
           },
           {
             path: ":productId",
-            element: <SingleProduct />,
+            // element: <SingleProduct />,
           },
         ],
       },
-
-      // {
-      //   path: "/blogs",
-      //   element: <BlogsWrapper />,
-      //   children: [
-      //     {
-      //       index: true,
-      //       element: <Blogs />,
-      //       loader: () => fetchData(BLOGS_API),
-      //     },
-      //     {
-      //       path: ":productId",
-      //       element: <SingleBlog />,
-      //     },
-      //   ],
-      // },
+      {
+        path: "/blogs",
+        children: [
+          {
+            index: true,
+            element: <Blogs />,
+          },
+          {
+            path: ":blogId",
+            // element: <SingleBlog />,
+          },
+        ],
+      },
       {
         path: "/cart",
         element: <Cart />,

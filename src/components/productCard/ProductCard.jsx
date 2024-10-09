@@ -15,6 +15,8 @@ const ProductCard = ({ id, description, title, price, image, brand }) => {
         <div className="buttonsContainer">
           <button className="addToCart">Add To Cart</button>
         </div>
+
+        {/* DO NOT DELETE */}
         {/* <div className="buttonsContainer">
           <div className="countContainer">
             <button className="add">+</button>

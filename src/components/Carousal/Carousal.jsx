@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import bannerOne from "../../assets/images/banner.webp";
 import bannerFour from "../../assets/images/banner8.webp";
 import bannerFive from "../../assets/images/banner7.webp";
-import './Carousal.css';
+import './carousal.css';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css'; 
 

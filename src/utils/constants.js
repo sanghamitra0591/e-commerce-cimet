@@ -1,1 +1,1 @@
-export const productsApi = "https://fakestoreapi.in/api/products?limit=100";
+export const productsApi = "https://fakestoreapi.in/api/products?limit=";

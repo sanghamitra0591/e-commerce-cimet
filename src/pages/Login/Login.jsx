@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { doSignInWithEmailAndPassword } from '../../firebase/auth';
 import { setUser } from '../../slice/AuthSlice';
@@ -8,6 +8,7 @@ import { setUser } from '../../slice/AuthSlice';
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
 
   const [email, setEmail] = useState('');
@@ -31,7 +32,9 @@ const Login = () => {
       }));
 
       alert("Login successful!");
-      navigate('/'); // Redirect to the home page
+      const redirectTo = location.state?.from || '/';
+      console.log(redirectTo)
+      navigate(redirectTo);
     } catch (error) {
       setLoading(false);
       switch (error.code) {

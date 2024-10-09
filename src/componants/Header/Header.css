@@ -1,68 +1,3 @@
-/* .header {
-    background-color: #4b5563; 
-    padding: 1rem; 
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); 
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    transition: all 0.3s; 
-  }
-  
-  .container {
-    max-width: 1200px; 
-    margin: 0 auto;
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    height: 100%; 
-  }
-  
-  .logo {
-    width: 40px; 
-    font-size: 2.25rem; 
-    font-weight: bold; 
-    color: #fbbf24; 
-    display: flex;
-    justify-content: flex-end; 
-  }
-  
-  .link {
-    display: flex;
-    justify-content: flex-start; 
-    cursor: pointer; 
-    color: #fbbf24; 
-    gap: 1rem; 
-  }
-  
-  .bag {
-    display: flex;
-    justify-content: flex-end; 
-    position: relative;
-    cursor: pointer; 
-    max-width: 50px; 
-  }
-  
-  .bag-icon {
-    font-size: 1.5rem; 
-  }
-  
-  .notification {
-    background-color: #f87171; 
-    position: absolute;
-    right: -0.5rem; 
-    bottom: -0.5rem; 
-    width: 18px; 
-    height: 18px; 
-    color: #ffffff; 
-    border-radius: 50%; 
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    font-size: 0.75rem; 
-  }
-   */
-
-
    .header {
     background-color: #4b5563; 
     padding-top: 1rem; 
@@ -96,7 +31,7 @@
   .link {
     display: flex;
     gap: 1rem; 
-    color: #fbbf24; 
+    text-decoration: none;
     
   }
   
@@ -107,19 +42,19 @@
 
   }
   
-  .bag {
+  /* .bag {
     cursor: pointer; 
     display: flex;
     position: relative;
     max-width: 50px; 
     justify-content: flex-end; 
   }
-  
-  .bag-icon {
+   */
+  /* .bag-icon {
     font-size: 1.5rem; 
     display: flex;
     justify-content: flex-end; 
-  }
+  } */
   
   .notification {
     background-color: #f87171;

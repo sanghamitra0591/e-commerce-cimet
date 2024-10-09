@@ -1,11 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
-import Cart from "../components/Cart/Cart";
+import Home from "../pages/home/Home";
+import Cart from "../pages/Cart/Cart";
 import Contact from "../pages/Contact/Contact";
-import Login from "../pages/login/Login";
+import Login from "../pages/Login/Login";
 import Blogs from "../pages/blogs/Blogs"
 import Products from "../pages/products/Products";
-import Home from "../pages/home/Home";
+import Signup from "../pages/Signup/Signup";
+import Profile from "../pages/Profile/Profile";
+import PrivateRoute from "./PrivateRoute";
+import SingleProduct from "../components/singleProduct/SingleProduct";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +29,7 @@ const router = createBrowserRouter([
           },
           {
             path: ":productId",
-            // element: <SingleProduct />,
+            element: <SingleProduct />,
           },
         ],
       },
@@ -44,7 +48,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: <PrivateRoute>
+          <Cart />
+        </PrivateRoute>,
       },
       {
         path: "/contact",
@@ -53,6 +59,16 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/profile",
+        element: <PrivateRoute>
+          <Profile />
+        </PrivateRoute>,
       },
     ],
   },

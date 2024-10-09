@@ -27,13 +27,12 @@ const Products = () => {
     return <div className="loading">Loading...</div>
   }
 
-
   return (
     <>
       <h2>Products</h2>
       <div className="productsContainer">
         {
-          currentPageProducts.map((product) => <ProductCard key={product.id} {...product} />)
+          currentPageProducts.map((product) => <ProductCard key={product.id} product={product} />)
         }
       </div>
       <div className="pagination">

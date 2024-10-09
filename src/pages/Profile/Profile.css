@@ -1,0 +1,34 @@
+
+.profileImageContainer{
+    border: 1px solid black;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.profileImageContainer>img:nth-child(1){
+    border: 1px solid black;
+    width: 100%;
+    height: 300px;
+    margin: auto;
+}
+.profileImageContainer>img:nth-child(2){
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    right: 10%;
+    top: 35%;
+    border: 5px solid white;
+}
+.profileWrapper>div:nth-child(2)>button{
+    width: 300px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}

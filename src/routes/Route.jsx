@@ -9,6 +9,7 @@ import Products from "../pages/products/Products";
 import Signup from "../pages/Signup/Signup";
 import Profile from "../pages/Profile/Profile";
 import PrivateRoute from "./PrivateRoute";
+import SingleProduct from "../components/singleProduct/SingleProduct";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
           },
           {
             path: ":productId",
-            // element: <SingleProduct />,
+            element: <SingleProduct />,
           },
         ],
       },
@@ -66,8 +67,8 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <PrivateRoute>
-        <Profile />
-      </PrivateRoute>,
+          <Profile />
+        </PrivateRoute>,
       },
     ],
   },

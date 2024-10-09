@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { showEllipsis } from "../../utils/helperFunctions";
 import "./productCard.css";
 import { addToCart, deleteFromCart, removeFromCart, selectCart } from "../../slice/CartSlice";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const { id, description, title, price, image, brand } = product;
@@ -12,13 +13,15 @@ const ProductCard = ({ product }) => {
   return (
     <>
       <div className="productCard">
-        <img className="productImage" src={image} alt={title} loading="lazy" />
-        <h3 className="productTitle">{showEllipsis(title, 3) + "..."}</h3>
-        <p className="productDescription">{showEllipsis(description, 25) + "..."}</p>
-        <div className="priceBrandContainer">
-          <span className="productPrice">Rs {price}</span>
-          <span className="productBrand">{brand}</span>
-        </div>
+        <Link to={`/products/${id}`}>
+          <img className="productImage" src={image} alt={title} loading="lazy" />
+          <h3 className="productTitle">{showEllipsis(title, 3) + "..."}</h3>
+          <p className="productDescription">{showEllipsis(description, 25) + "..."}</p>
+          <div className="priceBrandContainer">
+            <span className="productPrice">Rs {price}</span>
+            <span className="productBrand">{brand}</span>
+          </div>
+        </Link>
         {
           productInCart ?
             <div className="buttonsContainer">

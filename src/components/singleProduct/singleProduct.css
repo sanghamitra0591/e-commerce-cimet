@@ -1,0 +1,87 @@
+.singleProductContainer {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  width: 1500px;
+  min-height: 775px;
+  margin: auto;
+}
+
+.singleProductImageContainer {
+  flex: 1;
+  max-width: 500px;
+}
+
+.singleProductImage {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.singleProductDetails {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.singleProductTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.singleProductBrand,
+.singleProductModel,
+.singleProductColor {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.singleProductDescription {
+  margin: 1.5rem 0;
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.singleProductPriceContainer {
+  margin: 1rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.singleProductOriginalPrice {
+  font-size: 1.2rem;
+  text-decoration: line-through;
+  color: gray;
+}
+
+.singleProductDiscountPrice {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ff5722;
+}
+
+.singleProductDiscountTag {
+  background-color: #ff5722;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.singleProductAddToCart {
+  background-color: #28a745;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.singleProductAddToCart:hover {
+  background-color: #218838;
+}

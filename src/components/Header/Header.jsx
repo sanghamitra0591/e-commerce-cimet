@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./header.css";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const { userLoggedIn } = useSelector(state => state.auth)
   return (
     <header className="header">
       <div className="logoContainer">
@@ -32,11 +34,22 @@ const Header = () => {
                 Contact Us
               </Link>
             </li>
-            <li>
+            {!userLoggedIn && <li>
               <Link to={"/login"}>
                 Login
               </Link>
             </li>
+            }
+            {!userLoggedIn && <li>
+              <Link to={"/signup"}>
+                Signup
+              </Link>
+            </li>}
+            {userLoggedIn && <li>
+              <Link to={"/profile"}>
+                Profile
+              </Link>
+            </li>}
           </ul>
         </div>
       </nav>

@@ -10,7 +10,6 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -33,7 +32,6 @@ const Login = () => {
 
       alert("Login successful!");
       const redirectTo = location.state?.from || '/';
-      console.log(redirectTo)
       navigate(redirectTo);
     } catch (error) {
       setLoading(false);
@@ -60,8 +58,6 @@ const Login = () => {
     }
   };
 
-
-
   return (
     <div className='loginWrapper'>
       <div className='loginContainer'>
@@ -82,8 +78,6 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           /><br />
-
-
           <button type="submit" disabled={loading}>{loading ? "Logging in..." : "Login"}</button>
         </form>
         <p>Don't have an account? <span><Link to="/signup">Create Account</Link></span></p>

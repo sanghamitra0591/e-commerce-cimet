@@ -48,7 +48,6 @@ const Signup = () => {
     
             const userCredential = await doCreateUserWithEmailAndPassword(email, password);
             const user = userCredential.user;
-    
             await updateProfile(user, { displayName: username });
     
             await setDoc(doc(db, "usernames", username), { uid: user.uid });

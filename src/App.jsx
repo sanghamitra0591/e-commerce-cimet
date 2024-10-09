@@ -1,12 +1,12 @@
-import Footer from "./componants/Footer/Footer";
-import Header from "./componants/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div className="overflow-hidden">
      
-      <div style={{paddingTop:"90px"}}>
+      <div>
         <Header />
         <Outlet />
         <Footer />

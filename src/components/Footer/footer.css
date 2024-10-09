@@ -1,0 +1,152 @@
+.footer {
+  background-color: #344c8a;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+  height: 28rem;
+  
+}
+
+.FooterTexts {
+  margin: 0;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.Upper-Container{
+  height: 20rem;
+  display: flex;
+  gap: 1px;
+
+}
+.first-div{
+  background-color: rgb(21, 46, 81);
+  color: #ffff;
+  justify-content: space-between;
+  width: 30%;
+  padding: 5px;
+  text-align:start ;
+  height: 100%;
+
+
+}
+.first-div-Text{
+  font-size: 1.7rem;
+  color: #8a8888;
+
+
+  
+}
+.Link-Text{
+margin-left: 15px;
+margin-bottom: 5px;
+font-size: 1.5rem;
+font-weight: bold;
+}
+.second-div{
+  background-color: rgb(21, 46, 81);
+  color: #ffff;
+  justify-content: space-between;
+  width: 30%;
+  text-align:start ;
+
+  
+
+}
+.third-div{
+  background-color: rgb(21, 46, 81);
+  color: #ffff;
+  justify-content: space-between;
+  width: 30%;
+  text-align:start ;
+
+}
+.fourth-div{
+  background-color: rgb(21, 46, 81);
+  color: black;
+
+  justify-content: space-between;
+  width: 30%;
+  text-align:start ;
+
+
+
+}
+.child-div{
+  margin-top: 6rem;
+   
+
+}
+.icon{
+  height: 55px;
+  width: 55px;
+  padding: 10px;
+  
+
+
+}
+.icon-container{
+  display: flex;
+  margin-top: 20px;
+  margin: 10px;
+  gap: 20px;
+
+}
+.email-icon-icon-container{
+  display: flex;
+  margin: 10px;
+  gap: 12px;
+  align-items: center;
+  height: 55px;
+  width: 25rem;
+
+}
+.email-icon{
+  height: 55px;
+  width: 55px;
+
+  padding: 10px;
+}
+.email-icon-text{
+  font-size: 25px;
+
+}
+.email-us{
+  font-size: 25px;
+    padding: 8px;
+    color: #ffff;
+}
+.email-text-container{
+  display: flex;
+  margin: 10px;
+  gap: 12px;
+  align-items: center;
+  height: 55px;
+
+}
+.copyright-container {
+  display: flex;               
+  justify-content: center;      
+  align-items: center;         
+  padding: 10px;               
+  font-size: 14px;           
+  color: #ffffff;                 
+  margin-top: 20px;
+
+}
+
+.FooterTexts {
+  margin: 0;
+  font-size: 20px;
+}
+
+.reserved-text {
+  font-size: 20px;
+}
+
+.Link-Text{
+  color: #ffff;
+}

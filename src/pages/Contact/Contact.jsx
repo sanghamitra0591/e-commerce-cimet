@@ -19,7 +19,6 @@ const Contact = () => {
         .required('Required'),
     }),
     onSubmit: (values) => {
-      console.log('Form data:', values);
       alert('Form submitted successfully!');
     },
   });

@@ -1,0 +1,157 @@
+.productCard {
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 15px;
+  width: 350px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.productImage {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+.productTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  margin: 10px 0;
+}
+
+.productDescription {
+  font-size: 14px;
+  color: #555;
+  margin: 15px 0 0 0;
+  text-align: left;
+}
+
+.priceBrandContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productPrice {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+.productBrand {
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 10px 0;
+  background-color: #007bff;
+  padding: 10px;
+}
+
+.buttonsContainer {
+  margin-top: 15px;
+}
+
+.addToCart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+}
+
+.addToCart:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.addToCart:focus {
+  outline: none;
+}
+
+.addToCart:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}
+
+.countContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.add,
+.remove {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 40px;
+}
+
+.add:hover,
+.remove:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.count {
+  font-size: 16px;
+  margin: 0 10px;
+  min-width: 40px;
+  padding: 10px;
+  text-align: center;
+}
+
+.deleteAllContainer {
+  text-align: center;
+}
+
+.delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+}
+
+.delete:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.delete:focus {
+  outline: none;
+}
+
+.delete:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Profile.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { resetUser } from '../../slice/AuthSlice';
-import { auth, db } from '../../firebase/firebase-config'; 
-import { doc, setDoc } from "firebase/firestore"; 
+import { resetUser, updateGender } from '../../slice/AuthSlice';
+import { auth, db } from '../../firebase/firebase-config';
+import { doc, setDoc } from "firebase/firestore";
 import { sendPasswordResetEmail } from 'firebase/auth';
 
 const Profile = () => {
@@ -19,6 +19,7 @@ const Profile = () => {
         gender: currentUser.gender || '',
         email: currentUser.email || ''
     });
+
 
     const handleLogout = async () => {
         try {
@@ -38,12 +39,16 @@ const Profile = () => {
     };
 
     const handleUpdateChanges = async () => {
-        const userDocRef = doc(db, "usernames", currentUser.displayName); // Assuming displayName is the username
+        const userDocRef = doc(db, "usernames", currentUser.displayName);
         try {
             await setDoc(userDocRef, { gender, email }, { merge: true });
+            dispatch(updateGender({
+                gender
+            }));
             alert("Changes updated successfully");
-            setIsEditing(false); // Exit editing mode
+            setIsEditing(false);
         } catch (error) {
+            console.log({ error })
             console.error("Error updating changes: ", error);
         }
     };
@@ -72,24 +77,28 @@ const Profile = () => {
         <div className='profileWrapper'>
             <div className='profileImageContainer'>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIz4PzBQgV4Wo6K_O28etyENILj2otz-JreA&s" alt="" />
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="" />
+                {gender == "Male" && <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-cartoon-man-avatar-with-beard-vector-ilustration-png-image_6110777.png" />}
+                {gender == "Female" && <img src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="userAvatar" />}
+                {gender == "" || gender == "Other" && <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="userAvatar" />}
             </div>
-            <div>
-                <h2>User Profile</h2>
-                <div>
+            <div className='profileDetailsContainer'>
+                <h2>Hello {currentUser.displayName}!</h2>
+                <div className='userNameContainer'>
                     <label>Username:</label>
                     <input type="text" value={currentUser.displayName} readOnly />
                 </div>
-                <div>
+                <div className='emailContainer'>
                     <label>Email:</label>
-                    <input 
-                        type="email" 
-                        value={email} 
-                        readOnly={!isEditing} 
-                        onChange={(e) => setEmail(e.target.value)} 
+                    <input
+                        type="email"
+                        value={email}
+                        readOnly
+                        // readOnly={!isEditing} 
+                        onChange={(e) => setEmail(e.target.value)}
                     />
+                    <button onClick={handlePasswordReset}>Reset Password</button>
                 </div>
-                <div>
+                <div className='genderContainer'>
                     <label>Gender:</label>
                     <select
                         value={gender}
@@ -101,17 +110,16 @@ const Profile = () => {
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
                     </select>
+                    {isEditing ? (
+                        <div className='updateChangesButtonContainer'>
+                            <button onClick={handleUpdateChanges}>Update</button>
+                            <button onClick={handleUndoChanges}>Undo</button>
+                        </div>
+                    ) : (
+                        <button onClick={handleEdit}>Edit</button>
+                    )}
                 </div>
-                {isEditing ? (
-                    <div>
-                        <button onClick={handleUpdateChanges}>Update Changes</button>
-                        <button onClick={handleUndoChanges}>Undo Changes</button>
-                    </div>
-                ) : (
-                    <button onClick={handleEdit}>Edit</button>
-                )}
-                <button onClick={handlePasswordReset}>Reset Password</button>
-                <div>
+                <div className='logoutButtonConatiner'>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
             </div>
@@ -120,104 +128,3 @@ const Profile = () => {
 }
 
 export default Profile;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-// import "./Profile.css"
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
-// import { resetUser } from '../../slice/AuthSlice';
-
-// const Profile = () => {
-//     const dispatch = useDispatch();
-//     const navigate = useNavigate();
-
-//     const { currentUser } = useSelector(state=>state.auth);
-//     console.log(currentUser)
-
-//     const handleLogout = async () => {
-//         try {
-//             dispatch(resetUser());
-//             navigate("/login");
-//         } catch (error) {
-//             console.error("Logout failed", error);
-//         }
-//     };
-//     return (
-//         <div className='profileWrapper'>
-//             <div className='profileImageContainer'>
-//                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIz4PzBQgV4Wo6K_O28etyENILj2otz-JreA&s" alt="" />
-//                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="" />
-//             </div>
-//             <div>
-//             <button onClick={handleLogout}>Logout</button>
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default Profile

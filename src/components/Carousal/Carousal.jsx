@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Slider from "react-slick";
 import bannerOne from "../../assets/images/banner.webp";
 import bannerFour from "../../assets/images/banner8.webp";
@@ -8,8 +8,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css'; 
 
 function Carousal() {
-  const sliderRef = useRef(null);
-  const autoplayIntervalRef = useRef(null);
 
   const settings = {
     dots: true,

@@ -9,9 +9,11 @@ const SingleBlog = () => {
   const currentBlog = blogs.find((blog) => blog.id === Number(blogId));
 
   return (
-    <div className="single-blog-container">
-      <h1 className="blog-title">{currentBlog?.title}</h1>
-      <p className="blog-body">{currentBlog?.body}</p>
+    <div className='singleBlogWrapper'>
+      <div className='singleBlogContainer'>
+        <h2>{currentBlog?.title}</h2>
+        <p>{currentBlog?.body}</p>
+      </div>
     </div>
   );
 };

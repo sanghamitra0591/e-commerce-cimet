@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBlogs, selectBlogs, selectBlogsLoading } from '../../slice/BlogsSlice';
-import BlogCard from '../../components/blogCard/BlogCard';
 import Pagination from '../../components/pagination/Pagination';
 import "./blogs.css";
+import { useNavigate } from 'react-router-dom';
 
 const Blogs = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const blogs = useSelector(selectBlogs);
   const loading = useSelector(selectBlogsLoading);
@@ -17,6 +18,10 @@ const Blogs = () => {
   const startIndex = endIndex - blogsPerPage;
   const currentPageBlogs = blogs.slice(startIndex, endIndex);
 
+  const handleClick = (id) => {
+    navigate(`/blogs/${id}`);
+  }
+
   useEffect(() => {
     dispatch(fetchBlogs());
   }, [dispatch]);
@@ -26,13 +31,8 @@ const Blogs = () => {
   }
 
   return (
-    <>
-      <h2>Blogs</h2>
-      <div className="blogsContainer">
-        {currentPageBlogs.map((blog) => (
-          <BlogCard key={blog.id} blog={blog} />
-        ))}
-      </div>
+    <div className='blogsWrapper'>
+      <h1>Blogs</h1>
       <div className="pagination">
         <Pagination
           totalItems={blogs.length}
@@ -41,7 +41,15 @@ const Blogs = () => {
           setCurrentPage={setCurrentPage}
         />
       </div>
-    </>
+      <div className='blogsContainer'>
+        {currentPageBlogs.map(blog => (
+          <div key={blog.id} onClick={() => handleClick(blog.id)}>
+            <h2>{blog.title.split(" ").slice(0, 3).join(" ")}</h2>
+            <p>{blog.body.substring(0, 900)}...</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

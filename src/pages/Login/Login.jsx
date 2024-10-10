@@ -78,7 +78,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           /><br />
-          <button type="submit" disabled={loading}>{loading ? "Logging in..." : "Login"}</button>
+          <button  type="submit" disabled={loading}>{loading ? "Logging in..." : "Login"}</button>
         </form>
         <p>Don't have an account? <span><Link to="/signup">Create Account</Link></span></p>
       </div>

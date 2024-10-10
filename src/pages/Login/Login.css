@@ -31,12 +31,12 @@
 }
 .loginForm>button{
     border: 1px solid black;
-    width: 40%;
-    padding: 15px;
+    width: 65%;
+    padding: 12px;
     font-size: 18px;
     border-radius: 10px;
     outline: none;
-    margin: 30px auto auto auto;
+    margin: 40px auto auto auto;
 }
 .loginContainer>p{
     font-size: 18px;

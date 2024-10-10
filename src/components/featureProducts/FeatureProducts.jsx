@@ -44,7 +44,7 @@ const FeatureProducts = () => {
     <div>
       <Carousel responsive={responsive}>
       {productPreviewData.map((product) => (
-        <ProductCard key={product.id} {...product} />
+        <ProductCard key={product.id} product={product} />
       ))}
       </Carousel>
       ;

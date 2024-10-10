@@ -1,6 +1,5 @@
 
 .profileImageContainer{
-    border: 1px solid black;
     width: 100%;
     margin: auto;
     position: relative;
@@ -23,12 +22,69 @@
     top: 35%;
     border: 5px solid white;
 }
-.profileWrapper>div:nth-child(2)>button{
-    width: 300px;
-    padding: 15px;
+.profileDetailsContainer{
+    width: 45%;
+    margin: 20px auto;
+    height: 500px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.profileDetailsContainer>h2{
+    color: rgb(10, 10, 80);
+    margin: 1rem auto 4rem auto;
+}
+.profileDetailsContainer>div{
+    width: 60%;
+    margin: 40px auto;
+}
+.userNameContainer, .emailContainer, .genderContainer{
+    height: 30px;
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.userNameContainer>input, .emailContainer>input{
+    padding: 8px;
+    width: 300px;
+    font-size: 18px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+}
+.genderContainer>select{
+    padding: 5px;
+    width: 300px;
+    font-size: 16px;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+}
+.updateChangesButtonContainer{
+    display: flex;
+    gap: 15px;
+}
+.emailContainer>button{
+    height: 30px;
+    padding: 5px;
+}
+.updateChangesButtonContainer>button, .genderContainer>button{
+    height: 35px;
+    padding: 5px;
+}
+.logoutButtonConatiner{
+    width: 100%;
+    text-align: center;
+}
+.logoutButtonConatiner>button{
+    height: 50px;
+    font-size: 18px;
+    width: 250px;
+    padding: 15px;
     background-color: teal;
     color: white;
     border: none;
-    border-radius: 20px;
+    border-radius: 15px;
 }

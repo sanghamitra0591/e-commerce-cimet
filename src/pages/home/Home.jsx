@@ -4,12 +4,12 @@ import FeatureProducts from '../../components/featureProducts/FeatureProducts'
 
 const Home = () => {
   return (
-    
-   <>
-    <Carousal/>
-    <FeatureProducts/>
-   </>
-    
+
+    <>
+      <Carousal />
+      <FeatureProducts />
+    </>
+
   )
 }
 

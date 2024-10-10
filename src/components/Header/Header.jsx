@@ -1,59 +1,41 @@
+// import { BsBag } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import "./header.css";
-import { useSelector } from "react-redux";
+import "./Header.css";
 
 const Header = () => {
-  const { userLoggedIn } = useSelector(state => state.auth)
   return (
     <header className="header">
-      <div className="logoContainer">
-        <Link to="/">
-          <h1 className="logo">E-Commerce</h1>
+      <div className="container">
+        <Link to={"/"}>
+          <div>
+            <p className="logo">Ecommerce</p>
+          </div>
         </Link>
-      </div>
-      <nav>
-        <div className="nav-container">
-          <ul>
-            <li>
-              <Link to={"/products"}>
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link to={"/blogs"}>
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link to={"/cart"}>
-                Cart
-              </Link>
-            </li>
-            <li>
-              <Link to={"/contact"}>
-                Contact Us
-              </Link>
-            </li>
-            {!userLoggedIn && <li>
-              <Link to={"/login"}>
-                Login
-              </Link>
-            </li>
-            }
-            {!userLoggedIn && <li>
-              <Link to={"/signup"}>
-                Signup
-              </Link>
-            </li>}
-            {userLoggedIn && <li>
-              <Link to={"/profile"}>
-                Profile
-              </Link>
-            </li>}
-          </ul>
+        <div className="link">
+          <Link to={"/login"}>
+            <div className="blog-link">
+              <p>Login</p>
+            </div>
+          </Link>
+
+          <Link to={"/contact"}>
+            <div className="blog-link">
+              <p>Contact</p>
+            </div>
+          </Link>
+          <Link to={"/cart"}>
+            <div className="blog-link">
+              <p>Cart</p>
+            </div>
+          </Link>
+
+          {/* <div onClick={() => setIsOpen(!isOpen)} className="bag">
+            <BsBag className="bag-icon" />
+            <div className="notification">{itemAmount}</div>
+          </div> */}
         </div>
-      </nav>
-    </header >
+      </div>
+    </header>
   );
 };
 

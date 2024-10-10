@@ -31,21 +31,21 @@
 }
 .loginForm>button{
     border: 1px solid black;
-    width: 65%;
-    padding: 12px;
+    width: 40%;
+    padding: 15px;
     font-size: 18px;
     border-radius: 10px;
     outline: none;
-    margin: 40px auto auto auto;
+    margin: 30px auto auto auto;
 }
 .loginContainer>p{
     font-size: 18px;
 }
-.loginContainer>p>span>a{
+.loginContainer>p>span{
     font-size: 18px;
     text-decoration: underline;
     color: blue;
 }
-.loginContainer>p>span>a:hover{
+.loginContainer>p>span:hover{
     color: red;
 }

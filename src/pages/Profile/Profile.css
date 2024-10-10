@@ -1,5 +1,6 @@
 
 .profileImageContainer{
+    background-color: #f2f6f8;
     width: 100%;
     margin: auto;
     position: relative;
@@ -30,7 +31,11 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .profileDetailsContainer>h2{
+<<<<<<< HEAD
+    color: #27374D;
+=======
     color: rgb(10, 10, 80);
+>>>>>>> origin/blogs
     margin: 1rem auto 4rem auto;
 }
 .profileDetailsContainer>div{
@@ -45,6 +50,10 @@
     gap: 10px;
 }
 .userNameContainer>input, .emailContainer>input{
+<<<<<<< HEAD
+    background: none;
+=======
+>>>>>>> origin/blogs
     padding: 8px;
     width: 300px;
     font-size: 18px;
@@ -54,6 +63,10 @@
     border: 1px solid black;
 }
 .genderContainer>select{
+<<<<<<< HEAD
+    background: none;
+=======
+>>>>>>> origin/blogs
     padding: 5px;
     width: 300px;
     font-size: 16px;
@@ -67,12 +80,31 @@
     gap: 15px;
 }
 .emailContainer>button{
+<<<<<<< HEAD
+    background-color: #294052;
+    color: #DDE6ED;
+    border: none;
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    padding: 7px;
+}
+.updateChangesButtonContainer>button, .genderContainer>button{
+    background-color: #294052;
+    color: #DDE6ED;
+    border: none;
+    height: 35px;
+    padding: 5px;
+    font-size: 16px;
+    padding: 7px;
+=======
     height: 30px;
     padding: 5px;
 }
 .updateChangesButtonContainer>button, .genderContainer>button{
     height: 35px;
     padding: 5px;
+>>>>>>> origin/blogs
 }
 .logoutButtonConatiner{
     width: 100%;
@@ -83,8 +115,16 @@
     font-size: 18px;
     width: 250px;
     padding: 15px;
+<<<<<<< HEAD
+    background-color: #27374D;
+    color: #DDE6ED;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+=======
     background-color: teal;
     color: white;
     border: none;
     border-radius: 15px;
+>>>>>>> origin/blogs
 }

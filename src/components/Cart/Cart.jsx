@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+import React from "react";
+
+const Cart = () => {
+  return <div>Cart</div>;
+};
+
+export default Cart;
+=======
 import CartProducts from "../../components/cartProducts/CartProducts";
 import "./cart.css";
 
@@ -107,3 +116,4 @@ const Cart = () => {
 };
 
 export default Cart;
+>>>>>>> origin/blogs

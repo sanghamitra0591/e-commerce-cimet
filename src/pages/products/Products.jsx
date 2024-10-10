@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Pagination from '../../components/pagination/Pagination';
 import ProductCard from '../../components/productCard/ProductCard';
 import "./products.css";
+import loader from "../../assets/loaders/loader.svg";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const Products = () => {
 
 
   if (loading) {
-    return <div className="loading">Loading...</div>
+    return <div className="loading"><img src={loader} alt="loader" /></div>
   }
 
   return (

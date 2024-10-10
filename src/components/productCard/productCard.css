@@ -1,5 +1,5 @@
 .productCard {
-  background-color: #fff;
+  background-color: #9DB2BF;
   border-radius: 8px;
   padding: 10px;
   width: 350px;
@@ -32,7 +32,7 @@
 .productDescription {
   height: 75px;
   font-size: 14px;
-  color: #555;
+  color: #27374D;
   text-align: left;
   overflow: hidden;
 }
@@ -47,7 +47,7 @@
 .productPrice {
   font-size: 16px;
   font-weight: bold;
-  color: black;
+  color: 27374D;
   border-radius: 5px;
   padding: 10px;
 }
@@ -59,7 +59,7 @@
 
 .addToCart,
 .delete {
-  background-color: #007bff;
+  background-color: #27374D;
   color: white;
   border: none;
   border-radius: 5px;
@@ -72,7 +72,7 @@
 }
 
 .addToCart:hover {
-  background-color: #0056b3;
+  background-color: #092142;
   transform: translateY(-2px);
 }
 
@@ -85,7 +85,7 @@
 .delete:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-  color: #666;
+  color: #27374D;
 }
 
 .buttonsContainer {
@@ -139,7 +139,7 @@
   font-size: 14px;
   transition: background-color 0.3s;
   background-color: transparent;
-  color: black;
+  color: #27374D;
 }
 
 .delete:hover {

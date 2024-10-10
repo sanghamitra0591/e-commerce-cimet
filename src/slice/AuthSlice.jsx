@@ -6,6 +6,7 @@ const authSlice = createSlice({
         currentUser: null,
         userLoggedIn: false,
         loading: true,
+        selectedCurrency: 'USD'
     },
     reducers: {
         setUser(state, action) {
@@ -20,10 +21,13 @@ const authSlice = createSlice({
         },
         updateGender(state, action) {
             state.currentUser.gender = action.payload.gender
+        },
+        setSelectedCurrency(state, action) {
+            state.selectedCurrency = action.payload
         }
     },
 });
 
-export const { setUser, resetUser, updateGender } = authSlice.actions;
+export const { setUser, resetUser, updateGender, setSelectedCurrency } = authSlice.actions;
 export default authSlice.reducer;
 

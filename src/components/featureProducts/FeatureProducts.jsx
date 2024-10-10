@@ -6,9 +6,8 @@ import { useDispatch } from "react-redux";
 import ProductCard from "../productCard/ProductCard";
 
 const FeatureProducts = () => {
-    const dispatch = useDispatch();
-
-    const [productPreviewData, setProductPreviewData] = useState([]);
+  const dispatch = useDispatch();
+  const [productPreviewData, setProductPreviewData] = useState([]);
 
   const responsive = {
     superLargeDesktop: {
@@ -31,23 +30,28 @@ const FeatureProducts = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-        const action = await dispatch(fetchFeaturedProducts());
-        const data = action.payload || [];
-        setProductPreviewData(data);
+      const action = await dispatch(fetchFeaturedProducts());
+      const data = action.payload || [];
+      setProductPreviewData(data);
     };
 
     fetchData();
-}, [dispatch]);
-
+  }, [dispatch]);
 
   return (
     <div>
-      <Carousel responsive={responsive}>
-      {productPreviewData.map((product) => (
-        <ProductCard key={product.id} {...product} />
-      ))}
+      <Carousel
+        responsive={responsive}
+        infinite={true} 
+        autoPlay={true} 
+        autoPlaySpeed={3000} 
+        keyBoardControl={true}
+        transitionDuration={500}
+      >
+        {productPreviewData.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </Carousel>
-      ;
     </div>
   );
 };

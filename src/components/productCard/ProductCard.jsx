@@ -3,6 +3,7 @@ import { showEllipsis } from "../../utils/helperFunctions";
 import "./productCard.css";
 import { addToCart, deleteFromCart, removeFromCart, selectCart } from "../../slice/CartSlice";
 import { Link } from "react-router-dom";
+import { MdDelete } from "react-icons/md";
 
 const ProductCard = ({ product }) => {
   const { id, description, title, price, image, brand } = product;
@@ -18,8 +19,7 @@ const ProductCard = ({ product }) => {
           <h3 className="productTitle">{showEllipsis(title, 3) + "..."}</h3>
           <p className="productDescription">{showEllipsis(description, 25) + "..."}</p>
           <div className="priceBrandContainer">
-            <span className="productPrice">Rs {price}</span>
-            <span className="productBrand">{brand}</span>
+            <span className="productPrice">$ {price}</span>
           </div>
         </Link>
         {
@@ -30,8 +30,8 @@ const ProductCard = ({ product }) => {
                 <span className="count">{productInCart.quantity}</span>
                 <button className="add" onClick={() => dispatch(addToCart(product))}>+</button>
               </div>
-              <div className="deleteAllContainer">
-                <button className="delete" onClick={() => dispatch(deleteFromCart(product))}>Delete From Cart</button>
+              <div className="deleteAllContainer" onClick={() => dispatch(deleteFromCart(product))}>
+                <MdDelete className="delete" />
               </div>
             </div>
             :

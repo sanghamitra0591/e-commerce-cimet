@@ -15,8 +15,8 @@ const CartProducts = ({ product }) => {
         <img className="cartProductImage" src={image} alt={title} loading="lazy" />
         <h3 className="cartProductTitle">{showEllipsis(title, 3) + "..."}</h3>
         <div className="cartProductPriceBrandContainer">
-          <span className="cartProductPrice">Rs {price}</span>
-          <span className="cartProductTotalPrice">Rs {price * quantity}</span>
+          <span className="cartProductPrice">$ {price}</span>
+          <span className="cartProductTotalPrice">$ {price * quantity}</span>
         </div>
         <div className="cartProductButtonsContainer">
           <div className="cartProductCountContainer">

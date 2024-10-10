@@ -3,6 +3,7 @@ import { selectProducts } from "../../slice/ProductSlice"
 import { useParams } from "react-router-dom";
 import "./singleProduct.css";
 import { addToCart, deleteFromCart, removeFromCart, selectCart } from "../../slice/CartSlice";
+import { MdDelete } from "react-icons/md";
 
 const SingleProduct = () => {
   const products = useSelector(selectProducts);
@@ -33,13 +34,13 @@ const SingleProduct = () => {
           {discount ? (
             <>
               <span className="singleProductDiscountPrice">
-                Rs {price - (price * discount) / 100}
+                $ {price - (price * discount) / 100}
               </span>
-              <span className="singleProductOriginalPrice">Rs {price}</span>
+              <span className="singleProductOriginalPrice">$ {price}</span>
               <span className="singleProductDiscountTag">{discount}% OFF</span>
             </>
           ) : (
-            <span className="singleProductPrice">Rs {price}</span>
+            <span className="singleProductPrice">$ {price}</span>
           )}
         </div>
         {
@@ -51,7 +52,9 @@ const SingleProduct = () => {
                 <button className="add" onClick={() => dispatch(addToCart(currentProduct))}>+</button>
               </div>
               <div className="deleteAllContainer">
-                <button className="delete" onClick={() => dispatch(deleteFromCart(currentProduct))}>Delete From Cart</button>
+                <button className="delete" onClick={() => dispatch(deleteFromCart(currentProduct))}>
+                  <MdDelete className="delete" />
+                </button>
               </div>
             </div>
             :

@@ -10,6 +10,7 @@ import Signup from "../pages/Signup/Signup";
 import Profile from "../pages/Profile/Profile";
 import PrivateRoute from "./PrivateRoute";
 import SingleProduct from "../components/singleProduct/SingleProduct";
+import SingleBlog from "../components/singleBlog/SingleBlog";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
           },
           {
             path: ":blogId",
-            // element: <SingleBlog />,
+            element: <SingleBlog />,
           },
         ],
       },

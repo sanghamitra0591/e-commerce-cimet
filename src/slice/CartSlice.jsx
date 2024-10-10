@@ -22,13 +22,13 @@ export const cartSlice = createSlice({
           doesItemExist.quantity -= 1;
         }
         else {
-          state.cart.filter((item) => item.id !== product.id);
+          state.cart = state.cart.filter((item) => item.id !== product.id);
         }
       }
     },
 
     deleteFromCart: (state, action) => {
-      state.cart.filter((item) => item.id !== action.payload.id);
+      state.cart = state.cart.filter((item) => item.id !== action.payload.id);
     }
   }
 })

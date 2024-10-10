@@ -18,8 +18,12 @@ const authSlice = createSlice({
             state.userLoggedIn = false;
             state.loading = false;
         },
+        updateGender(state, action) {
+            state.currentUser.gender = action.payload.gender
+        }
     },
 });
 
-export const { setUser, resetUser } = authSlice.actions;
+export const { setUser, resetUser, updateGender } = authSlice.actions;
 export default authSlice.reducer;
+

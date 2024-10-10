@@ -4,11 +4,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { doSignInWithEmailAndPassword } from '../../firebase/auth';
 import { setUser } from '../../slice/AuthSlice';
+import React, { useState } from 'react';
+import './Login.css';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { doSignInWithEmailAndPassword } from '../../firebase/auth';
+import { setUser } from '../../slice/AuthSlice';
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const location = useLocation();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -31,7 +37,8 @@ const Login = () => {
       }));
 
       alert("Login successful!");
-      navigate('/'); // Redirect to the home page
+      const redirectTo = location.state?.from || '/';
+      navigate(redirectTo);
     } catch (error) {
       setLoading(false);
       switch (error.code) {
@@ -57,8 +64,6 @@ const Login = () => {
     }
   };
 
-
-
   return (
     <div className='loginWrapper'>
       <div className='loginContainer'>
@@ -79,9 +84,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           /><br />
-
-
-          <button type="submit" disabled={loading}>{loading ? "Logging in..." : "Login"}</button>
+          <button  type="submit" disabled={loading}>{loading ? "Logging in..." : "Login"}</button>
         </form>
         <p>Don't have an account? <span><Link to="/signup">Create Account</Link></span></p>
       </div>

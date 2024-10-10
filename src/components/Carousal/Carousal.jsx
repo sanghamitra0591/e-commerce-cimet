@@ -1,4 +1,5 @@
 import React from "react";
+import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
 import bannerOne from "../../assets/images/banner.webp";
 import bannerFour from "../../assets/images/banner8.webp";
@@ -8,6 +9,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css'; 
 
 function Carousal() {
+  const sliderRef = useRef(null);
+  const autoplayIntervalRef = useRef(null);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -30,8 +34,12 @@ function Carousal() {
           <img src={bannerFour} alt="Banner 4" />
         </div>
       </Slider>
+      {/* <div className="carousel-controls">
+        <button onClick={prevSlide} className="prev"><FaArrowAltCircleLeft className="Icons" /></button>
+        <button onClick={nextSlide} className="next"><FaArrowAltCircleRight className="Icons"/></button>
+      </div> */}
     </div>
   );
 }
 
-export default Carousal;
+export default Carousal

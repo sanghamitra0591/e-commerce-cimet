@@ -47,3 +47,6 @@
   .Contact-us-Heading{
     margin-bottom: 3rem;
   }
+  #message{
+    resize: none;
+  }

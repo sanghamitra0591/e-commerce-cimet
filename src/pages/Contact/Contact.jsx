@@ -1,7 +1,8 @@
 import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import "./Contact.css"
+import "./Contact.css";
+
 const Contact = () => {
   const formik = useFormik({
     initialValues: {
@@ -18,10 +19,12 @@ const Contact = () => {
       message: Yup.string()
         .required('Required'),
     }),
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       alert('Form submitted successfully!');
+      resetForm(); 
     },
   });
+
   return (
     <form onSubmit={formik.handleSubmit} className="contact-form">
       <h1 className="Contact-us-Heading">Contact Us</h1>
@@ -75,9 +78,6 @@ const Contact = () => {
 };
 
 export default Contact;
-
-
-
 
 
 

@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home/Home";
-import Cart from "../componants/Cart/Cart";
-import ProductsWrapper from "../pages/Products/ProductsWrapper";
+import Cart from "../components/Cart/Cart";
 import Products from "../pages/Products/Products";
 import SingleProduct from "../pages/Products/SingleProduct";
 import Contact from "../pages/Contact/Contact";
 import Login from "../pages/Login/Login";
+import Signup from "../pages/Signup/Signup";
 
 const router = createBrowserRouter([
   {
@@ -19,34 +19,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <ProductsWrapper />,
-        children: [
-          {
-            index: true,
-            element: <Products />,
-          },
-          {
-            path: ":productId",
-            element: <SingleProduct />,
-          },
-        ],
+        element: <Products />,
       },
-
-      // {
-      //   path: "/blogs",
-      //   element: <BlogsWrapper />,
-      //   children: [
-      //     {
-      //       index: true,
-      //       element: <Blogs />,
-      //       loader: () => fetchData(BLOGS_API),
-      //     },
-      //     {
-      //       path: ":productId",
-      //       element: <SingleBlog />,
-      //     },
-      //   ],
-      // },
+      {
+        path: "/:id",
+        element: <SingleProduct />
+      },
       {
         path: "/cart",
         element: <Cart />,
@@ -58,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
     ],
   },

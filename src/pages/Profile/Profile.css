@@ -1,0 +1,104 @@
+
+.profileImageContainer{
+    background-color: #f2f6f8;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.profileImageContainer>img:nth-child(1){
+    border: 1px solid black;
+    width: 100%;
+    height: 300px;
+    margin: auto;
+}
+.profileImageContainer>img:nth-child(2){
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    right: 10%;
+    top: 35%;
+    border: 5px solid white;
+}
+.profileDetailsContainer{
+    width: 45%;
+    margin: 20px auto;
+    height: 500px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.profileDetailsContainer>h2{
+    color: #27374D;
+    margin: 1rem auto 4rem auto;
+}
+.profileDetailsContainer>div{
+    width: 70%;
+    margin: 40px auto;
+}
+.userNameContainer, .emailContainer, .genderContainer{
+    height: 30px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.userNameContainer>input, .emailContainer>input{
+    background: none;
+    padding: 8px;
+    width: 300px;
+    font-size: 18px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+}
+.genderContainer>select{
+    background: none;
+    padding: 5px;
+    width: 300px;
+    font-size: 16px;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+}
+.updateChangesButtonContainer{
+    display: flex;
+    gap: 15px;
+}
+.emailContainer>button{
+    background-color: #294052;
+    color: #DDE6ED;
+    border: none;
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    padding: 7px;
+}
+.updateChangesButtonContainer>button, .genderContainer>button{
+    background-color: #294052;
+    color: #DDE6ED;
+    border: none;
+    height: 35px;
+    padding: 5px;
+    font-size: 16px;
+    padding: 7px;
+}
+.logoutButtonConatiner{
+    width: 100%;
+    text-align: center;
+}
+.logoutButtonConatiner>button{
+    height: 50px;
+    font-size: 18px;
+    width: 250px;
+    padding: 15px;
+    background-color: #27374D;
+    color: #DDE6ED;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+}

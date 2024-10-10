@@ -76,10 +76,10 @@ const Profile = () => {
     return (
         <div className='profileWrapper'>
             <div className='profileImageContainer'>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIz4PzBQgV4Wo6K_O28etyENILj2otz-JreA&s" alt="" />
-                {gender == "Male" && <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-cartoon-man-avatar-with-beard-vector-ilustration-png-image_6110777.png" />}
-                {gender == "Female" && <img src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="userAvatar" />}
-                {gender == "Other" && <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="userAvatar" />}
+                <img src="https://png.pngtree.com/background/20210711/original/pngtree-technology-electronics-promotion-banner-background-picture-image_1092347.jpg" alt="" />
+                {gender == "Male" && <img src="https://www.svgrepo.com/show/384674/account-avatar-profile-user-11.svg" />}
+                {gender == "Female" && <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRGSMHuxj5Dac-sVESwYuHv7fBqj3fqCa53w&s" alt="userAvatar" />}
+                {gender == "Other" && <img src="https://static-00.iconduck.com/assets.00/user-avatar-clown-icon-256x255-mbktek5z.png" alt="userAvatar" />}
                 {gender == ""&& <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="userAvatar" />}
             </div>
             <div className='profileDetailsContainer'>

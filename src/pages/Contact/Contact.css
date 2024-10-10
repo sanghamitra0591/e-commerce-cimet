@@ -4,7 +4,7 @@
     padding: 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 8px;
-    background-color: #f2f6f8;
+    background-color: #ccd6db;
   }
   
   .contact-form div {
@@ -20,9 +20,10 @@
   .contact-form textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #363636;
     border-radius: 4px;
     background: none;
+    outline: none;
   }
   
   .contact-form button {

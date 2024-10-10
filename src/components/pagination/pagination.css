@@ -13,9 +13,10 @@
 .pagination button {
   padding: 8px 12px;
   margin: 0 5px;
-  background-color: #f0f0f0;
+  background-color: #9DB2BF;
   border: 1px solid #ccc;
   color: #333;
+  font-weight: 600;
   cursor: pointer;
   font-size: 16px;
   border-radius: 4px;
@@ -23,19 +24,19 @@
 }
 
 .pagination button:hover {
-  background-color: #007bff;
+  background-color: #27374D;
   color: white;
 }
 
 .pagination .active {
-  background-color: #007bff;
+  background-color: #27374D;
   color: white;
   font-weight: bold;
   border-color: #0056b3;
 }
 
 .pagination button:disabled {
-  background-color: #ddd;
+  background-color: #9DB2BF;
   color: #999;
   cursor: not-allowed;
 }

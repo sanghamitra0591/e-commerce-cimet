@@ -1,17 +1,27 @@
-.blogsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem;
-  justify-content: center;
+.blogsWrapper{
+  width: 85%;
+  margin: auto;
+  padding-top: 20px;
+  margin-bottom: 4rem;
 }
-
-.blogCard {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s;
-  width: 300px;
+.blogsWrapper>h1{
+  color: #27374D;
+}
+.blogsContainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.blogsContainer>div {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  background-color: #c8d2e0;
+  padding: 60px 40px;
+  border-radius: 15px;
+}
+.blogsContainer>div>h2 {
+  text-align: left;
+  color: #27374D;
+}
+.blogsContainer>div>p {
+  text-align: left;
 }

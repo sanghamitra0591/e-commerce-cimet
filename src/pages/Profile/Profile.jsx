@@ -79,7 +79,8 @@ const Profile = () => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIz4PzBQgV4Wo6K_O28etyENILj2otz-JreA&s" alt="" />
                 {gender == "Male" && <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-cartoon-man-avatar-with-beard-vector-ilustration-png-image_6110777.png" />}
                 {gender == "Female" && <img src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="userAvatar" />}
-                {gender == "" || gender == "Other" && <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="userAvatar" />}
+                {gender == "Other" && <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="userAvatar" />}
+                {gender == ""&& <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="userAvatar" />}
             </div>
             <div className='profileDetailsContainer'>
                 <h2>Hello {currentUser.displayName}!</h2>

@@ -1,4 +1,3 @@
-import React from "react";
 import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
 import bannerOne from "../../assets/images/banner.webp";

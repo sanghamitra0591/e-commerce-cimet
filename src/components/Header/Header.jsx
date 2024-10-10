@@ -1,41 +1,48 @@
-// import { BsBag } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import "./Header.css";
+import "./header.css";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const { userLoggedIn } = useSelector(state => state.auth)
   return (
     <header className="header">
-      <div className="container">
-        <Link to={"/"}>
-          <div>
-            <p className="logo">Ecommerce</p>
-          </div>
+      <div className="headerWrapper">
+      <div className="logoContainer">
+        <Link to="/">
+          <h1 className="logo">E-Commerce</h1>
         </Link>
-        <div className="link">
-          <Link to={"/login"}>
-            <div className="blog-link">
-              <p>Login</p>
-            </div>
-          </Link>
-
-          <Link to={"/contact"}>
-            <div className="blog-link">
-              <p>Contact</p>
-            </div>
-          </Link>
-          <Link to={"/cart"}>
-            <div className="blog-link">
-              <p>Cart</p>
-            </div>
-          </Link>
-
-          {/* <div onClick={() => setIsOpen(!isOpen)} className="bag">
-            <BsBag className="bag-icon" />
-            <div className="notification">{itemAmount}</div>
-          </div> */}
-        </div>
       </div>
-    </header>
+      <nav>
+        <div className="nav-container">
+              <Link to={"/products"}>
+                Products
+              </Link>
+              <Link to={"/blogs"}>
+                Blogs
+              </Link>
+              <Link to={"/cart"}>
+                Cart
+              </Link>
+              <Link to={"/contact"}>
+                Contact Us
+              </Link>
+            {!userLoggedIn && 
+              <Link to={"/login"}>
+                Login
+              </Link>
+            }
+            {!userLoggedIn &&
+              <Link to={"/signup"}>
+                Signup
+              </Link>}
+            {userLoggedIn && 
+              <Link to={"/profile"}>
+                Profile
+              </Link>}
+        </div>
+      </nav>
+      </div>
+    </header >
   );
 };
 

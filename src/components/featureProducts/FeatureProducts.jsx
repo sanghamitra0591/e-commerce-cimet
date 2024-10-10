@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { fetchFeaturedProducts } from "../../slice/FeaturedProductsSlice";
 import { useDispatch } from "react-redux";
 import ProductCard from "../productCard/ProductCard";
+import "./FeaturedPoduct.css";
 
 const FeatureProducts = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const FeatureProducts = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="featuredWrapper">
       <Carousel
         responsive={responsive}
         infinite={true} 

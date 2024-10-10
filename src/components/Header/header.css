@@ -1,12 +1,16 @@
 .header {
+  background-color: #27374D;
+  color: #DDE6ED;
+  padding: 10px 0px;
+}
+.headerWrapper{
+  width: 95%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #007bff;
-  color: white;
 }
-
 .logoContainer {
   flex: 1;
 }
@@ -14,32 +18,23 @@
 .logo {
   font-size: 24px;
   text-decoration: none;
-  color: white;
+  color: #DDE6ED;
 }
 
 .nav-container {
   display: flex;
+  gap: 25px;
   font-weight: bold;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-li {
-  margin: 0 15px;
+  color: #DDE6ED;
 }
 
 a {
   text-decoration: none;
-  color: white;
   font-size: 18px;
   transition: color 0.3s ease;
+  color: #DDE6ED;
 }
 
 a:hover {
-  color: #cce5ff;
+  color: #DDE6ED;
 }

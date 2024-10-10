@@ -5,6 +5,7 @@
     place-content: center;
 }
 .loginContainer{
+    background-color: #f2f6f8;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 30%;
     margin: auto;
@@ -13,6 +14,7 @@
 }
 .loginContainer>h2{
     font-size: 32px;
+    color: #27374D;
 }
 .loginForm{
     text-align: center;
@@ -28,24 +30,28 @@
     font-size: 17px;
     outline: none;
     margin: 5px auto;
+    background: none;
 }
 .loginForm>button{
-    border: 1px solid black;
-    width: 40%;
-    padding: 15px;
+    background-color: #27374D;
+    color: #DDE6ED;
+    border: none;
+    font-weight: bold;
+    width: 65%;
+    padding: 12px;
     font-size: 18px;
     border-radius: 10px;
     outline: none;
-    margin: 30px auto auto auto;
+    margin: 40px auto auto auto;
 }
 .loginContainer>p{
     font-size: 18px;
 }
-.loginContainer>p>span{
+.loginContainer>p>span>a{
     font-size: 18px;
     text-decoration: underline;
     color: blue;
 }
-.loginContainer>p>span:hover{
+.loginContainer>p>span>a:hover{
     color: red;
 }

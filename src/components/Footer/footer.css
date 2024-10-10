@@ -1,14 +1,16 @@
 .footer {
-  background-color: #344c8a;
+  background-color: #27374D;
   color: white;
   text-align: center;
   padding: 15px 0;
-  position: relative;
   bottom: 0;
   width: 100%;
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
   height: 28rem;
-  
+}
+
+.footerWrapper {
+  width: 80%;
+  margin: auto;
 }
 
 .FooterTexts {
@@ -16,86 +18,81 @@
   font-size: 14px;
   margin-top: 20px;
 }
-.Upper-Container{
-  height: 20rem;
-  display: flex;
-  gap: 1px;
 
+.upperContainer {
+  width: 100%;
+  margin: auto;
+  height: 15rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 25px;
+  align-items: center;
+  margin-top: 30px;
 }
-.first-div{
-  background-color: rgb(21, 46, 81);
+
+.first-div {
   color: #ffff;
   justify-content: space-between;
   width: 30%;
   padding: 5px;
-  text-align:start ;
   height: 100%;
-
-
 }
-.first-div-Text{
-  font-size: 1.7rem;
-  color: #8a8888;
 
+.first-div-Text {
+  font-size: 18px;
+  color: #bebcbc;
+}
 
-  
+.Link-Text {
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
 }
-.Link-Text{
-margin-left: 15px;
-margin-bottom: 5px;
-font-size: 1.5rem;
-font-weight: bold;
-}
-.second-div{
-  background-color: rgb(21, 46, 81);
+
+.second-div {
   color: #ffff;
   justify-content: space-between;
   width: 30%;
-  text-align:start ;
-
-  
-
+  text-align: start;
 }
-.third-div{
-  background-color: rgb(21, 46, 81);
+
+.third-div {
   color: #ffff;
   justify-content: space-between;
   width: 30%;
-  text-align:start ;
+  text-align: start;
 
 }
-.fourth-div{
-  background-color: rgb(21, 46, 81);
-  color: black;
 
+.fourth-div {
   justify-content: space-between;
   width: 30%;
-  text-align:start ;
-
-
-
+  text-align: start;
 }
-.child-div{
+
+.child-div {
   margin-top: 6rem;
-   
-
 }
-.icon{
+
+.icon {
   height: 55px;
   width: 55px;
   padding: 10px;
-  
+
 
 
 }
-.icon-container{
+
+.icon-container {
   display: flex;
   margin-top: 20px;
   margin: 10px;
   gap: 20px;
 
 }
-.email-icon-icon-container{
+
+.email-icon-icon-container {
   display: flex;
   margin: 10px;
   gap: 12px;
@@ -104,22 +101,26 @@ font-weight: bold;
   width: 25rem;
 
 }
-.email-icon{
+
+.email-icon {
   height: 55px;
   width: 55px;
 
   padding: 10px;
 }
-.email-icon-text{
-  font-size: 25px;
+
+.email-icon-text {
+  font-size: 20px;
 
 }
-.email-us{
-  font-size: 25px;
-    padding: 8px;
-    color: #ffff;
+
+.email-us {
+  font-size: 20px;
+  padding: 8px;
+  color: #ffff;
 }
-.email-text-container{
+
+.email-text-container {
   display: flex;
   margin: 10px;
   gap: 12px;
@@ -127,15 +128,15 @@ font-weight: bold;
   height: 55px;
 
 }
-.copyright-container {
-  display: flex;               
-  justify-content: center;      
-  align-items: center;         
-  padding: 10px;               
-  font-size: 14px;           
-  color: #ffffff;                 
-  margin-top: 20px;
 
+.copyright-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 30px;
 }
 
 .FooterTexts {
@@ -147,6 +148,6 @@ font-weight: bold;
   font-size: 20px;
 }
 
-.Link-Text{
+.Link-Text {
   color: #ffff;
 }

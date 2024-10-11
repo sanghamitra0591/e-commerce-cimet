@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { fetchFeaturedProducts } from "../../slice/FeaturedProductsSlice";
 import { useDispatch } from "react-redux";
 import ProductCard from "../productCard/ProductCard";
 import "./FeaturedPoduct.css";
+import { fetchProducts, } from "../../slice/ProductSlice";
 
 const FeatureProducts = () => {
   const dispatch = useDispatch();
   const [productPreviewData, setProductPreviewData] = useState([]);
-
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -30,27 +29,29 @@ const FeatureProducts = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const action = await dispatch(fetchFeaturedProducts());
-      const data = action.payload || [];
-      setProductPreviewData(data);
-    };
-
-    fetchData();
+    dispatch(fetchProducts())
+      .unwrap()
+      .then((data) => {
+        setProductPreviewData(data.slice(0, 8))
+      })
+      .catch((e) => {
+        console.log(e);
+      })
   }, [dispatch]);
 
+  console.log(productPreviewData)
   return (
     <div className="featuredWrapper">
       <Carousel
         responsive={responsive}
-        infinite={true} 
-        autoPlay={true} 
-        autoPlaySpeed={3000} 
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={3000}
         keyBoardControl={true}
         transitionDuration={500}
       >
         {productPreviewData.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product._id} product={product} />
         ))}
       </Carousel>
     </div>

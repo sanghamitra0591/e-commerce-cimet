@@ -6,20 +6,21 @@ import ProductCard from '../../components/productCard/ProductCard';
 import "./products.css";
 import loader from "../../assets/loaders/loader.svg";
 import { setSelectedCurrency } from '../../slice/AuthSlice';
+import { selectCart } from '../../slice/CartSlice';
 
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector(selectProducts);
   const loading = useSelector(selectLoading);
-  const selectedCurrency = useSelector(state=>state.selectedCurrency)
+  const selectedCurrency = useSelector(state => state.selectedCurrency)
+  const cart = useSelector(selectCart);
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const productsPerPage = 10;
+  const productsPerPage = 6;
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch])
-
 
   const endIndex = currentPage * productsPerPage;
   const startIndex = endIndex - productsPerPage;
@@ -53,7 +54,7 @@ const Products = () => {
       </div>
       <div className="productsContainer">
         {
-          currentPageProducts.map((product) => <ProductCard key={product.id} product={product} />)
+          currentPageProducts.map((product) => <ProductCard key={product._id} product={product} />)
         }
       </div>
       <div className="pagination">

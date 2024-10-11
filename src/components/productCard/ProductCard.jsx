@@ -1,50 +1,76 @@
 import { useDispatch, useSelector } from "react-redux";
 import { showEllipsis } from "../../utils/helperFunctions";
-import "./productCard.css";
-import { addToCart, deleteFromCart, removeFromCart, selectCart } from "../../slice/CartSlice";
-import { Link, useNavigate } from "react-router-dom";
-import { MdDelete } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { MdDelete, MdStar } from "react-icons/md";
 import { fetchSingleProduct } from "../../slice/SingleProductSlice";
+import { addToCart, deleteFromCart, removeFromCart, selectCart } from "../../slice/CartSlice";
+import "./productCard.css";
 
 const ProductCard = ({ product }) => {
-  const { id, description, title, price, image, brand } = product;
+  const { _id, description, name, price, url, brand, category, totalRating, inStock, inventory } = product;
   const dispatch = useDispatch();
   const cart = useSelector(selectCart);
-  const productInCart = cart.find((cartItem) => cartItem.id === id);
+  const productInCart = cart.find((cartItem) => cartItem._id === product._id);
   const navigate = useNavigate();
+
   const handleSingleProductClick = () => {
-    dispatch(fetchSingleProduct(id));
-    navigate(`/products/${id}`);
+    dispatch(fetchSingleProduct(product._id));
+    navigate(`/products/${product._id}`);
   }
 
   return (
-    <>
-      <div className="productCard" onClick={handleSingleProductClick}>
-        <img className="productImage" src={image} alt={title} loading="lazy" />
-        <h3 className="productTitle">{showEllipsis(title, 3) + "..."}</h3>
-        <p className="productDescription">{showEllipsis(description, 25) + "..."}</p>
-        <div className="priceBrandContainer">
-          <span className="productPrice">$ {price}</span>
-        </div>
-        {
-          productInCart ?
-            <div className="buttonsContainer">
-              <div className="countContainer">
-                <button className="remove" onClick={() => dispatch(removeFromCart(product))}>-</button>
-                <span className="count">{productInCart.quantity}</span>
-                <button className="add" onClick={() => dispatch(addToCart(product))}>+</button>
-              </div>
-              <div className="deleteAllContainer" onClick={() => dispatch(deleteFromCart(product))}>
-                <MdDelete className="delete" />
-              </div>
-            </div>
-            :
-            <div className="addToCartContainer">
-              <button className="addToCart" onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
-            </div>
-        }
+    <div className="product-card" onClick={handleSingleProductClick}>
+      <div className="product-image-container">
+        <img className="product-image" src={url} alt={name} loading="lazy" />
       </div>
-    </>
+      <div className="product-info">
+        <h3 className="product-title">{showEllipsis(name, 3)}</h3>
+        <p className="product-description">{showEllipsis(description, 10)}</p>
+        <div className="product-details">
+          <span className="product-price">${price}</span>
+          <span className="product-brand">{brand}</span>
+        </div>
+        <div className="product-meta">
+          <span className="product-category">{category}</span>
+          <span className="product-rating">
+            {totalRating ? (
+              <span className="rating">
+                <MdStar /> {totalRating}
+              </span>
+            ) : null}
+
+          </span>
+        </div>
+        <div className="inventory">
+          {
+            inStock ? (
+              <span className="product-inventory">In stock: {inventory}</span>
+            )
+              :
+              (
+                <span className="out-of-stock">Out of Stock</span>
+              )
+          }
+        </div>
+      </div>
+      {
+        productInCart ?
+          <div className="buttons-container">
+            <div className="count-container">
+              <button className="remove" onClick={(e) => { e.stopPropagation(); dispatch(removeFromCart(product)); }}>-</button>
+              <span className="count">{productInCart.quantity}</span>
+              <button className="add" onClick={(e) => { e.stopPropagation(); dispatch(addToCart(product)); }}>+</button>
+            </div>
+            <div className="delete-container" onClick={(e) => { e.stopPropagation(); dispatch(deleteFromCart(product)); }}>
+              <MdDelete className="delete" />
+            </div>
+          </div>
+          :
+          <div className="add-to-cart-container">
+            <button className="add-to-cart" onClick={(e) => { e.stopPropagation(); dispatch(addToCart(product)); }}>Add To Cart</button>
+          </div>
+      }
+    </div>
   )
 }
 

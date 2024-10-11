@@ -11,26 +11,26 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const product = action.payload;
-      const doesItemExists = state.cart.find((item) => item.id === product.id);
+      const doesItemExists = state.cart.find((item) => item._id === product._id);
       doesItemExists ? doesItemExists.quantity += 1 : state.cart.push({ ...product, quantity: 1 });
       state.checkOut = false;
     },
 
     removeFromCart: (state, action) => {
       const product = action.payload;
-      const doesItemExist = state.cart.find((item) => item.id === product.id);
+      const doesItemExist = state.cart.find((item) => item._id === product._id);
       if (doesItemExist) {
         if (doesItemExist.quantity > 1) {
           doesItemExist.quantity -= 1;
         }
         else {
-          state.cart = state.cart.filter((item) => item.id !== product.id);
+          state.cart = state.cart.filter((item) => item._id !== product._id);
         }
       }
     },
 
     deleteFromCart: (state, action) => {
-      state.cart = state.cart.filter((item) => item.id !== action.payload.id);
+      state.cart = state.cart.filter((item) => item._id !== action.payload._id);
     },
 
     checkOutFromCart: (state, action) => {

@@ -27,7 +27,7 @@ const Blogs = () => {
   }, [dispatch]);
 
   if (loading) {
-    return <div className="loading">Loading...</div>;
+    return <div className="loading"><img src="https://cdn.pixabay.com/animation/2022/07/31/05/09/05-09-47-978_512.gif" alt="loader" /></div>
   }
 
   return (

@@ -4,21 +4,21 @@
   padding: 10px 0px;
 }
 .headerWrapper{
-  width: 95%;
+  width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 .logoContainer {
   flex: 1;
 }
 
 .logo {
-  font-size: 24px;
-  text-decoration: none;
-  color: #DDE6ED;
+  width: 170px;
+  height: 50px;
+  object-fit: cover;
 }
 
 .nav-container {
@@ -30,11 +30,15 @@
 
 a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   transition: color 0.3s ease;
   color: #DDE6ED;
 }
 
 a:hover {
   color: #DDE6ED;
+  text-decoration: underline;
+}
+a>svg{
+  font-size: 30px;
 }

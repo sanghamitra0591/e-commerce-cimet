@@ -19,7 +19,8 @@ const SingleProduct = () => {
   const { title, image, price, description, brand, model, color, discount } = currentProduct;
 
   return (
-    <div className="singleProductContainer">
+    <div className="singleProductWrapper">
+      <div className="singleProductContainer">
       <div className="singleProductImageContainer">
         <img src={image} alt={title} className="singleProductImage" />
       </div>
@@ -45,16 +46,14 @@ const SingleProduct = () => {
         </div>
         {
           productInCart ?
-            <div className="buttonsContainer">
+            <div className="buttonsContainerSingleProduct">
               <div className="countContainer">
                 <button className="remove" onClick={() => dispatch(removeFromCart(currentProduct))}>-</button>
                 <span className="count">{productInCart.quantity}</span>
                 <button className="add" onClick={() => dispatch(addToCart(currentProduct))}>+</button>
               </div>
               <div className="deleteAllContainer">
-                <button className="delete" onClick={() => dispatch(deleteFromCart(currentProduct))}>
-                  <MdDelete className="delete" />
-                </button>
+                  <MdDelete onClick={() => dispatch(deleteFromCart(currentProduct))} className="delete" />
               </div>
             </div>
             :
@@ -63,6 +62,7 @@ const SingleProduct = () => {
             </div>
         }
       </div>
+    </div>
     </div>
   );
 };

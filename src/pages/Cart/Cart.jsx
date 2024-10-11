@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import CartProducts from "../../components/cartProducts/CartProducts";
 import "./cart.css";
 import { checkOutFromCart, selectCart, selectCheckout } from "../../slice/CartSlice";
+import cartEmpty from "../../assets/images/cartEmpty.webp";
+import thankYou from "../../assets/images/thankYou.gif";
 
 const Cart = () => {
 
@@ -17,31 +19,13 @@ const Cart = () => {
         {
           checkout ? (
             <div className="buy-now-container">
-              <div className="buy-now">
-                <span>T</span>
-                <span>H</span>
-                <span>A</span>
-                <span>N</span>
-                <span>K</span>
-                <span>&nbsp;</span>
-                <span>Y</span>
-                <span>O</span>
-                <span>u</span>
-              </div>
+              <img src={thankYou} alt="thank-you" />
             </div>
           )
             :
             (
               <div className="buy-now-container">
-                <div className="buy-now">
-                  <span>B</span>
-                  <span>U</span>
-                  <span>Y</span>
-                  <span>&nbsp;</span>
-                  <span>N</span>
-                  <span>O</span>
-                  <span>W</span>
-                </div>
+                <img src={cartEmpty} alt="cart-empty" />
               </div>
             )
         }

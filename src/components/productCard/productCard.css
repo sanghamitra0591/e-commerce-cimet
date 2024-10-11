@@ -1,10 +1,8 @@
 .productCard {
-  background-color: #9DB2BF;
+  background-color: #27374D;
   border-radius: 8px;
-  padding: 10px;
-  width: 350px;
-  height: 575px;
-  margin-bottom: 20px;
+  padding: 5px;
+  height: 550px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
@@ -20,10 +18,14 @@
   object-fit: cover;
 }
 
+.productDetailsWrapperCard{
+  padding: 15px 15px 0px 15px;
+}
+
 .productTitle {
   font-size: 18px;
   font-weight: bold;
-  color: #333;
+  color: #fff;
   text-align: left;
   margin: 10px 0;
   overflow: hidden;
@@ -32,7 +34,7 @@
 .productDescription {
   height: 75px;
   font-size: 14px;
-  color: #27374D;
+  color: #fff;
   text-align: left;
   overflow: hidden;
 }
@@ -47,7 +49,7 @@
 .productPrice {
   font-size: 16px;
   font-weight: bold;
-  color: 27374D;
+  color: #fff;
   border-radius: 5px;
   padding: 10px;
 }
@@ -59,8 +61,8 @@
 
 .addToCart,
 .delete {
-  background-color: #27374D;
-  color: white;
+  background-color: #b9d0e2;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
@@ -72,8 +74,9 @@
 }
 
 .addToCart:hover {
-  background-color: #092142;
+  background-color: #8aacc5;
   transform: translateY(-2px);
+  color: #fff;
 }
 
 .addToCart:focus,
@@ -106,13 +109,15 @@
 
 .add,
 .remove {
-  width: 25px;
-  height: 25px;
-  background-color: #f0f0f0;
+  width: 40px;
+  height: 40px;
+  background-color: #b9d0e2;
+  color: #27374D;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 25px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,7 +125,9 @@
 
 .count {
   font-weight: bold;
+  font-size: 23px;
   margin: 0 5px;
+  color: white;
 }
 
 .deleteAllContainer {
@@ -138,10 +145,11 @@
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;
-  background-color: transparent;
+  background-color: #b9d0e2;
   color: #27374D;
 }
 
 .delete:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #526D82;
+  color: #fff;
 }

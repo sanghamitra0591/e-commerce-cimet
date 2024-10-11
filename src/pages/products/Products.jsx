@@ -6,19 +6,35 @@ import ProductCard from '../../components/productCard/ProductCard';
 import "./products.css";
 import loader from "../../assets/loaders/loader.svg";
 import { setSelectedCurrency } from '../../slice/AuthSlice';
+import axios from 'axios';
 
 const Products = () => {
   const dispatch = useDispatch();
-  const products = useSelector(selectProducts);
+  let products = useSelector(selectProducts);
   const loading = useSelector(selectLoading);
-  const selectedCurrency = useSelector(state=>state.selectedCurrency)
+  const selectedCurrency = useSelector(state=>state.auth.selectedCurrency);
+  console.log({selectedCurrency})
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [exchangeRates, setCartExchangeRates] = useState([]);
 
   const productsPerPage = 10;
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch])
+
+  useEffect(() => {
+    const fetchCartExchangeRates = async () => {
+        try {
+          console.log({selectedCurrency})
+            const response = await axios.get(`https://api.exchangerate-api.com/v4/latest/${selectedCurrency}`);
+            setCartExchangeRates(response.data.rates);
+        } catch (error) {
+            console.error("Error fetching exchange rates:", error);
+        }
+    };
+    fetchCartExchangeRates();
+}, [selectedCurrency]);
 
 
   const endIndex = currentPage * productsPerPage;
@@ -27,7 +43,7 @@ const Products = () => {
 
 
   if (loading) {
-    return <div className="loading"><img src={loader} alt="loader" /></div>
+    return <div className="loading"><img src="https://cdn.pixabay.com/animation/2022/07/31/05/09/05-09-47-978_512.gif" alt="loader" /></div>
   }
   const convertPrice = (price) => {
     if (selectedCurrency === 'USD') return price;
@@ -42,10 +58,10 @@ const Products = () => {
   };
 
   return (
-    <>
+    <div className='productsWrapper'>
       <h2>Products</h2>
       <div>
-        <select onChange={(e) => changeCurrency(e.target.value)} value={selectedCurrency}>
+        <select onChange={(e) => setSelectedCurrency(e.target.value)} value={selectedCurrency}>
           <option value="USD">USD</option>
           <option value="INR">INR</option>
           <option value="EUR">EURO</option>
@@ -64,7 +80,7 @@ const Products = () => {
           setCurrentPage={setCurrentPage}
         />
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,15 +1,17 @@
-h2 {
-  text-align: center;
+.productsWrapper{
+  width: 90%;
+  margin: auto;
+}
+.productsWrapper>h2 {
   margin: 20px 0;
-  color: #333;
+  color: #27374D;
   font-size: 50px;
 }
 
 .productsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
 }
 
 .loading {

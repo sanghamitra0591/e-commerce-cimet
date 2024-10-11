@@ -21,28 +21,30 @@ const ProductCard = ({ product }) => {
     <>
       <div className="productCard" onClick={handleSingleProductClick}>
         <img className="productImage" src={image} alt={title} loading="lazy" />
-        <h3 className="productTitle">{showEllipsis(title, 3) + "..."}</h3>
-        <p className="productDescription">{showEllipsis(description, 25) + "..."}</p>
-        <div className="priceBrandContainer">
-          <span className="productPrice">$ {price}</span>
+        <div className="productDetailsWrapperCard">
+          <h3 className="productTitle">{showEllipsis(title, 3) + "..."}</h3>
+          <p className="productDescription">{showEllipsis(description, 25) + "..."}</p>
+          <div className="priceBrandContainer">
+            <span className="productPrice">$ {price}</span>
+          </div>
+          {
+            productInCart ?
+              <div className="buttonsContainer">
+                <div className="countContainer">
+                  <button className="remove" onClick={() => dispatch(removeFromCart(product))}>-</button>
+                  <span className="count">{productInCart.quantity}</span>
+                  <button className="add" onClick={() => dispatch(addToCart(product))}>+</button>
+                </div>
+                <div className="deleteAllContainer" onClick={() => dispatch(deleteFromCart(product))}>
+                  <MdDelete className="delete" />
+                </div>
+              </div>
+              :
+              <div className="addToCartContainer">
+                <button className="addToCart" onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
+              </div>
+          }
         </div>
-        {
-          productInCart ?
-            <div className="buttonsContainer">
-              <div className="countContainer">
-                <button className="remove" onClick={() => dispatch(removeFromCart(product))}>-</button>
-                <span className="count">{productInCart.quantity}</span>
-                <button className="add" onClick={() => dispatch(addToCart(product))}>+</button>
-              </div>
-              <div className="deleteAllContainer" onClick={() => dispatch(deleteFromCart(product))}>
-                <MdDelete className="delete" />
-              </div>
-            </div>
-            :
-            <div className="addToCartContainer">
-              <button className="addToCart" onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
-            </div>
-        }
       </div>
     </>
   )
